@@ -6,4 +6,6 @@ module.exports = {
   uri:'https://warm-dawn-86267.herokuapp.com/auth/google/callback',
   stripePubKey:process.env.STRIPE_PUB_KEY,
   stripeSecKey:process.env.STRIPE_SEC_KEY,
+  sendGridKey:process.env.SENDGRID_KEY,
+  redirectDomain: process.env.REDIRECT_DOMAIN
 };

@@ -4,8 +4,9 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const keys = require('./config/keys');
 const bodyParser = require('body-parser');
-require('./models/User')
-require('./services/passport')
+require('./models/User');
+require('./models/Survey');
+require('./services/passport');
 
 
 mongoose.connect(keys.mongoURI);
@@ -25,6 +26,7 @@ app.use(passport.session());
 //Functions returning routes requiring app
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 //Route React client properly in prod
 if(process.env.NODE_ENV = 'production'){
